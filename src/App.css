@@ -6,7 +6,7 @@
 
 /* 侧边导航栏样式 */
 .sidebar {
-  width: 280px;
+  width: clamp(250px, 20vw, 320px);
   background: linear-gradient(145deg, #4a5568 0%, #2d3748 100%);
   backdrop-filter: blur(20px);
   color: white;
@@ -28,7 +28,40 @@
 
 .sidebar.collapsed {
   width: 60px;
-  left: -220px;
+  left: calc(-1 * clamp(250px, 20vw, 320px) + 60px);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: clamp(200px, 25vw, 280px);
+  }
+  
+  .sidebar.collapsed {
+    left: calc(-1 * clamp(200px, 25vw, 280px) + 50px);
+    width: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100vw;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    height: 100vh;
+  }
+  
+  .sidebar.collapsed {
+    left: -100vw;
+    width: 100vw;
+  }
+  
+  .floating-toggle {
+    left: 15px;
+    top: 15px;
+    width: 45px;
+    height: 45px;
+  }
 }
 
 .sidebar-header {
@@ -207,7 +240,7 @@
 
 .App-main {
   flex: 1;
-  margin-left: 320px;
+  margin-left: calc(clamp(250px, 20vw, 320px) + 40px);
   padding: 20px;
   text-align: left;
   overflow-y: auto;
@@ -218,6 +251,27 @@
 
 .App-main.sidebar-collapsed {
   margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .App-main {
+    margin-left: calc(clamp(200px, 25vw, 280px) + 40px);
+  }
+  
+  .App-main.sidebar-collapsed {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-main {
+    margin-left: 0;
+    padding: 15px;
+  }
+  
+  .App-main.sidebar-collapsed {
+    margin-left: 0;
+  }
 }
 
 /* 首页样式 */

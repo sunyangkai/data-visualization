@@ -23,7 +23,7 @@
   justify-content: center;
 }
 
-.nav-tabs button {
+.nav-tabs a {
   padding: 10px 20px;
   border: 2px solid #4a5568;
   background-color: transparent;
@@ -32,13 +32,15 @@
   cursor: pointer;
   font-size: 14px;
   transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.nav-tabs button:hover {
+.nav-tabs a:hover {
   background-color: #4a5568;
 }
 
-.nav-tabs button.active {
+.nav-tabs a.active {
   background-color: #4299e1;
   border-color: #4299e1;
 }
@@ -47,4 +49,149 @@
   flex: 1;
   padding: 0;
   text-align: left;
+}
+
+/* 首页样式 */
+.home-page {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-page h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #2d3748;
+}
+
+.navigation-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.nav-card {
+  display: block;
+  padding: 32px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-card:hover {
+  border-color: #4299e1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.nav-card h2 {
+  margin: 0 0 12px 0;
+  font-size: 1.5rem;
+  color: #2d3748;
+}
+
+.nav-card p {
+  margin: 0;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+/* 文档页面样式 */
+.docs-page {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.docs-page h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #2d3748;
+}
+
+.docs-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.doc-card {
+  display: block;
+  padding: 24px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.doc-card:hover {
+  border-color: #4299e1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.doc-card h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.25rem;
+  color: #2d3748;
+}
+
+.doc-card p {
+  margin: 0;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+/* MDX文档页面样式 */
+.mdx-doc-page {
+  padding: 20px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.doc-navigation {
+  margin-bottom: 20px;
+}
+
+.back-link {
+  color: #4299e1;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.document-header h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #2d3748;
+}
+
+.document-path {
+  color: #718096;
+  font-size: 0.9rem;
+  margin-bottom: 32px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.doc-not-found {
+  padding: 40px;
+  text-align: center;
+}
+
+.doc-not-found h1 {
+  color: #e53e3e;
+  margin-bottom: 16px;
 }

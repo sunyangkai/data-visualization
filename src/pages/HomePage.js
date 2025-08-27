@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 const HomePage = () => {
   return (
     <div className="home-page">
-      <h1>📊 数据可视化平台</h1>
       <div className="navigation-cards">
         <Link to="/dashboard" className="nav-card">
           <h2>📊 仪表板</h2>

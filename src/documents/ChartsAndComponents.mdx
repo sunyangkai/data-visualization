@@ -5,75 +5,6 @@ import LineChart from '../components/LineChart';
 import BarChart from '../components/BarChart';
 import PieChart from '../components/PieChart';
 
-
-export const InteractiveCounter = () => {
-  const [count, setCount] = React.useState(0)
-  
-  return (
-    <div style={{
-      padding: '20px',
-      border: '2px solid #3b82f6',
-      borderRadius: '12px',
-      backgroundColor: '#eff6ff',
-      margin: '20px 0',
-      textAlign: 'center'
-    }}>
-      <h3 style={{ color: '#1e40af', margin: '0 0 16px 0' }}>
-        🎮 交互式计数器
-      </h3>
-      <div style={{
-        fontSize: '36px',
-        fontWeight: 'bold',
-        color: '#2563eb',
-        marginBottom: '16px'
-      }}>
-        {count}
-      </div>
-      <button
-        onClick={() => setCount(count + 1)}
-        style={{
-          padding: '8px 16px',
-          backgroundColor: '#3b82f6',
-          color: 'white',
-          border: 'none',
-          borderRadius: '6px',
-          cursor: 'pointer',
-          marginRight: '8px'
-        }}
-      >
-        ➕ 增加
-      </button>
-      <button
-        onClick={() => setCount(count - 1)}
-        style={{
-          padding: '8px 16px',
-          backgroundColor: '#ef4444',
-          color: 'white',
-          border: 'none',
-          borderRadius: '6px',
-          cursor: 'pointer',
-          marginRight: '8px'
-        }}
-      >
-        ➖ 减少
-      </button>
-      <button
-        onClick={() => setCount(0)}
-        style={{
-          padding: '8px 16px',
-          backgroundColor: '#6b7280',
-          color: 'white',
-          border: 'none',
-          borderRadius: '6px',
-          cursor: 'pointer'
-        }}
-      >
-        🔄 重置
-      </button>
-    </div>
-  )
-}
-
 # 📊 图表组件与高级功能
 
 这个文档展示了如何在 MDX 中使用图表组件和 React 功能。
@@ -182,3 +113,74 @@ export const MyComponent = () => {
 ---
 
 *这就是 MDX 的强大之处 - 在一个文档中无缝结合内容和交互！*
+
+
+
+
+export const InteractiveCounter = () => {
+  const [count, setCount] = React.useState(0)
+  
+  return (
+    <div style={{
+      padding: '20px',
+      border: '2px solid #3b82f6',
+      borderRadius: '12px',
+      backgroundColor: '#eff6ff',
+      margin: '20px 0',
+      textAlign: 'center'
+    }}>
+      <h3 style={{ color: '#1e40af', margin: '0 0 16px 0' }}>
+        🎮 交互式计数器
+      </h3>
+      <div style={{
+        fontSize: '36px',
+        fontWeight: 'bold',
+        color: '#2563eb',
+        marginBottom: '16px'
+      }}>
+        {count}
+      </div>
+      <button
+        onClick={() => setCount(count + 1)}
+        style={{
+          padding: '8px 16px',
+          backgroundColor: '#3b82f6',
+          color: 'white',
+          border: 'none',
+          borderRadius: '6px',
+          cursor: 'pointer',
+          marginRight: '8px'
+        }}
+      >
+        ➕ 增加
+      </button>
+      <button
+        onClick={() => setCount(count - 1)}
+        style={{
+          padding: '8px 16px',
+          backgroundColor: '#ef4444',
+          color: 'white',
+          border: 'none',
+          borderRadius: '6px',
+          cursor: 'pointer',
+          marginRight: '8px'
+        }}
+      >
+        ➖ 减少
+      </button>
+      <button
+        onClick={() => setCount(0)}
+        style={{
+          padding: '8px 16px',
+          backgroundColor: '#6b7280',
+          color: 'white',
+          border: 'none',
+          borderRadius: '6px',
+          cursor: 'pointer'
+        }}
+      >
+        🔄 重置
+      </button>
+    </div>
+  )
+}

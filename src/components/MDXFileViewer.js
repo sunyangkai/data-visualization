@@ -62,7 +62,7 @@ const MDXFileViewer = () => {
           </div>
         </div>
         
-        <div className="document-content">
+        <div className="document-content prose max-w-none">
           <MDXProvider>
             {SelectedComponent && <SelectedComponent />}
           </MDXProvider>

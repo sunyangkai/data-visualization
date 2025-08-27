@@ -20,7 +20,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "webpack serve --mode development --config webpack.config.mjs",
+    "dev": "webpack serve --mode development --config webpack.config.mjs",
     "build": "webpack --mode production --config webpack.config.mjs",
     "test": "jest",
     "clear-cache": "rimraf node_modules/.cache && rimraf build && npm cache clean --force"
@@ -47,11 +47,16 @@
     "@babel/core": "^7.27.1",
     "@babel/preset-env": "^7.27.1",
     "@babel/preset-react": "^7.27.1",
+    "@tailwindcss/postcss": "^4.1.12",
+    "@tailwindcss/typography": "^0.5.16",
+    "autoprefixer": "^10.4.21",
     "babel-loader": "^10.0.0",
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.3",
+    "postcss": "^8.5.6",
     "rimraf": "^6.0.1",
     "style-loader": "^4.0.0",
+    "tailwindcss": "^4.1.12",
     "webpack": "^5.97.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0"

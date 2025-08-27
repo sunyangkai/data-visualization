@@ -60,7 +60,10 @@ const webpackConfig = {
           },
         ],
       },
-      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+      { 
+        test: /\.css$/, 
+        use: ['style-loader', 'css-loader', 'postcss-loader']
+      },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         type: 'asset/resource',
@@ -75,7 +78,10 @@ const webpackConfig = {
     }),
   ],
   devServer: {
-    static: { directory: path.join(__dirname, 'public') },
+    static: { 
+      directory: path.join(__dirname, 'public'),
+      serveIndex: false, // 禁用目录列表，避免 URI malformed 错误
+    },
     port: 3000,
     hot: true,
     open: true,

@@ -13,16 +13,27 @@ function App() {
   return (
     <Router>
       <div className="App">
+        {sidebarCollapsed && (
+          <button 
+            className="floating-toggle"
+            onClick={() => setSidebarCollapsed(false)}
+            aria-label="展开导航栏"
+          >
+            ☰
+          </button>
+        )}
         <aside className={`sidebar ${sidebarCollapsed ? 'collapsed' : ''}`}>
           <div className="sidebar-header">
             <h2>{sidebarCollapsed ? '📊' : '📊 数据平台'}</h2>
-            <button 
-              className="sidebar-toggle"
-              onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-              aria-label={sidebarCollapsed ? '展开导航栏' : '收起导航栏'}
-            >
-              {sidebarCollapsed ? '→' : '←'}
-            </button>
+            {!sidebarCollapsed && (
+              <button 
+                className="sidebar-toggle"
+                onClick={() => setSidebarCollapsed(true)}
+                aria-label="收起导航栏"
+              >
+                ←
+              </button>
+            )}
           </div>
           <nav className="sidebar-nav">
             <NavLink 

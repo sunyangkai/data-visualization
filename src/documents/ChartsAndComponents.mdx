@@ -4,6 +4,7 @@ import * as React from 'react'
 import LineChart from '../components/LineChart';
 import BarChart from '../components/BarChart';
 import PieChart from '../components/PieChart';
+import DataTable from '../components/DataTable';
 
 # 📊 图表组件与高级功能
 
@@ -64,6 +65,18 @@ import PieChart from '../components/PieChart';
     }]
   }} />
 
+## 📋 数据表格组件
+
+展示结构化数据的最佳方式：
+
+<DataTable data={[
+  { id: 1, name: '张三', age: 28, city: '北京', salary: 15000 },
+  { id: 2, name: '李四', age: 32, city: '上海', salary: 18000 },
+  { id: 3, name: '王五', age: 26, city: '深圳', salary: 16000 },
+  { id: 4, name: '赵六', age: 35, city: '广州', salary: 20000 },
+  { id: 5, name: '钱七', age: 29, city: '杭州', salary: 17000 }
+]} />
+
 ## 🎮 交互式组件
 
 点击按钮与组件互动：
@@ -78,13 +91,14 @@ import PieChart from '../components/PieChart';
 - 页面加载时间：**{new Date().toLocaleTimeString('zh-CN')}**
 - 随机颜色：<span style={{color: `hsl(${Math.floor(Math.random() * 360)}, 70%, 50%)`}}>**彩色文字**</span>
 
-## 📋 数据表格
+## 📋 组件对比表格
 
 | 图表类型 | 适用场景 | 数据类型 |
 |----------|----------|----------|
 | 📈 折线图 | 趋势分析 | 时间序列 |
 | 📊 柱状图 | 数量对比 | 分类数据 |
 | 🥧 饼图 | 占比显示 | 百分比数据 |
+| 📋 数据表格 | 详细数据展示 | 结构化数据 |
 
 ## 💡 高级技巧
 
@@ -102,6 +116,7 @@ import PieChart from '../components/PieChart';
 <LineChart data={chartData} />
 <BarChart data={barData} />
 <PieChart data={pieData} />
+<DataTable data={tableData} />
 
 // ✅ 使用 React hooks
 export const MyComponent = () => {

@@ -3,6 +3,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import remarkGfm from 'remark-gfm';
+import remarkToc from 'remark-toc';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -55,7 +58,14 @@ const webpackConfig = {
             options: {
               outputFormat: 'program',
               providerImportSource: '@mdx-js/react',
-              remarkPlugins: [remarkGfm], // 表格/任务列表/删除线
+              remarkPlugins: [
+                remarkGfm, // 表格/任务列表/删除线
+                [remarkToc, { heading: '目录', maxDepth: 3, tight: true, ordered: false }], // 在“## 目录”处注入 TOC，深度到 h3
+              ], 
+              rehypePlugins: [
+                rehypeSlug,
+                [rehypeAutolinkHeadings, { behavior: 'wrap' }], // 标题可点击
+              ],
             },
           },
         ],

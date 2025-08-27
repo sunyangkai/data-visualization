@@ -42,16 +42,6 @@ const MDXFileViewer = () => {
             </div>
           ))}
         </div>
-        
-        <div className="file-info">
-          <h4>💡 使用说明</h4>
-          <ul>
-            <li>直接编辑 <code>src/documents/</code> 中的 .mdx 文件</li>
-            <li>保存后浏览器会自动热重载</li>
-            <li>可以在 MDX 中使用 import 导入 React 组件</li>
-            <li>支持完整的 Markdown 语法和 JSX</li>
-          </ul>
-        </div>
       </div>
 
       <div className="document-viewer">

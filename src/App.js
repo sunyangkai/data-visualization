@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import Dashboard from './components/Dashboard';
-import MDXFileViewer from './components/MDXFileViewer';
+import Dashboard from './components/Dashboard.js';
+import MDXFileViewer from './components/MDXFileViewer.js';
 import './components/MDXFileViewer.css';
 
 function App() {

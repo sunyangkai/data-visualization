@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import LineChart from './LineChart';
-import MultiLineChart from './MultiLineChart';
-import BarChart from './BarChart';
-import MultiBarChart from './MultiBarChart';
-import PieChart from './PieChart';
-import MixedChart from './MixedChart';
-import DataTable from './DataTable';
-import { apiService } from '../services/api';
+import LineChart from './LineChart.js';
+import MultiLineChart from './MultiLineChart.js';
+import BarChart from './BarChart.js';
+import MultiBarChart from './MultiBarChart.js';
+import PieChart from './PieChart.js';
+import MixedChart from './MixedChart.js';
+import DataTable from './DataTable.js';
+import { apiService } from '../services/api.js';
 import './Dashboard.css';
 
 const Dashboard = () => {

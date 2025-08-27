@@ -9,9 +9,10 @@ import { Pie } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const PieChart = ({ data }) => {
+const PieChart = ({ data, width = 400, height = 400 }) => {
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'top',
@@ -23,7 +24,11 @@ const PieChart = ({ data }) => {
     },
   };
 
-  return <Pie data={data} options={options} />;
+  return (
+    <div style={{ width: `${width}px`, height: `${height}px`, margin: '0 auto' }}>
+      <Pie data={data} options={options} />
+    </div>
+  );
 };
 
 export default PieChart;

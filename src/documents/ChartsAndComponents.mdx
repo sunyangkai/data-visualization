@@ -1,0 +1,184 @@
+
+import * as React from 'react'
+
+import LineChart from '../components/LineChart';
+import BarChart from '../components/BarChart';
+import PieChart from '../components/PieChart';
+
+
+export const InteractiveCounter = () => {
+  const [count, setCount] = React.useState(0)
+  
+  return (
+    <div style={{
+      padding: '20px',
+      border: '2px solid #3b82f6',
+      borderRadius: '12px',
+      backgroundColor: '#eff6ff',
+      margin: '20px 0',
+      textAlign: 'center'
+    }}>
+      <h3 style={{ color: '#1e40af', margin: '0 0 16px 0' }}>
+        🎮 交互式计数器
+      </h3>
+      <div style={{
+        fontSize: '36px',
+        fontWeight: 'bold',
+        color: '#2563eb',
+        marginBottom: '16px'
+      }}>
+        {count}
+      </div>
+      <button
+        onClick={() => setCount(count + 1)}
+        style={{
+          padding: '8px 16px',
+          backgroundColor: '#3b82f6',
+          color: 'white',
+          border: 'none',
+          borderRadius: '6px',
+          cursor: 'pointer',
+          marginRight: '8px'
+        }}
+      >
+        ➕ 增加
+      </button>
+      <button
+        onClick={() => setCount(count - 1)}
+        style={{
+          padding: '8px 16px',
+          backgroundColor: '#ef4444',
+          color: 'white',
+          border: 'none',
+          borderRadius: '6px',
+          cursor: 'pointer',
+          marginRight: '8px'
+        }}
+      >
+        ➖ 减少
+      </button>
+      <button
+        onClick={() => setCount(0)}
+        style={{
+          padding: '8px 16px',
+          backgroundColor: '#6b7280',
+          color: 'white',
+          border: 'none',
+          borderRadius: '6px',
+          cursor: 'pointer'
+        }}
+      >
+        🔄 重置
+      </button>
+    </div>
+  )
+}
+
+# 📊 图表组件与高级功能
+
+这个文档展示了如何在 MDX 中使用图表组件和 React 功能。
+
+## 📈 折线图
+
+展示数据趋势的最佳选择：
+
+<LineChart data={{
+  labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
+  datasets: [{
+    label: '月度销售额 (万元)',
+    data: [65, 59, 80, 81, 56, 95],
+    borderColor: '#3b82f6',
+    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+    fill: true,
+    tension: 0.4
+  }]
+}} />
+
+## 📊 柱状图
+
+对比不同类别的数据：
+
+<BarChart data={{
+  labels: ['产品A', '产品B', '产品C', '产品D'],
+  datasets: [{
+    label: '销量 (件)',
+    data: [120, 190, 300, 250],
+    backgroundColor: [
+      '#ef4444',
+      '#3b82f6',
+      '#10b981',
+      '#f59e0b'
+    ],
+    borderWidth: 2
+  }]
+}} />
+
+## 🥧 饼图
+
+显示占比关系：
+
+<PieChart 
+  width={250} 
+  height={250}
+  data={{
+    labels: ['移动端', '桌面端', '平板', '其他'],
+    datasets: [{
+      data: [45, 30, 20, 5],
+      backgroundColor: [
+        '#3b82f6',
+        '#10b981',
+        '#f59e0b',
+        '#8b5cf6'
+      ]
+    }]
+  }} />
+
+## 🎮 交互式组件
+
+点击按钮与组件互动：
+
+<InteractiveCounter />
+
+## 🔢 动态数据
+
+利用 JavaScript 表达式显示实时信息：
+
+- 当前计数器状态：动态变化
+- 页面加载时间：**{new Date().toLocaleTimeString('zh-CN')}**
+- 随机颜色：<span style={{color: `hsl(${Math.floor(Math.random() * 360)}, 70%, 50%)`}}>**彩色文字**</span>
+
+## 📋 数据表格
+
+| 图表类型 | 适用场景 | 数据类型 |
+|----------|----------|----------|
+| 📈 折线图 | 趋势分析 | 时间序列 |
+| 📊 柱状图 | 数量对比 | 分类数据 |
+| 🥧 饼图 | 占比显示 | 百分比数据 |
+
+## 💡 高级技巧
+
+1. **React Hooks**：通过 `React.useState` 使用状态管理
+2. **自定义样式**：直接在 JSX 中使用 `style` 属性
+3. **事件处理**：支持所有 React 事件处理器
+4. **条件渲染**：使用 JavaScript 条件表达式
+
+## 🎯 最佳实践
+
+> ⚠️ **注意**：图表组件已通过 MDXProvider 提供，无需手动导入。
+
+```jsx
+// ✅ 正确用法 - 直接使用组件
+<LineChart data={chartData} />
+<BarChart data={barData} />
+<PieChart data={pieData} />
+
+// ✅ 使用 React hooks
+export const MyComponent = () => {
+  const [state, setState] = React.useState(0)
+  return <div>{state}</div>
+}
+```
+
+---
+
+*这就是 MDX 的强大之处 - 在一个文档中无缝结合内容和交互！*
